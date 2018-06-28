@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITest"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="ProblemSolved SRT Conversion" Height="350" Width="525" Icon="Document-Write-icon.ico">
     <Border Padding="10">
         <StackPanel>
 
@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="2" Click="ConvertButton_Click" Content="Convert" />
+                <Button x:Name="ConvertBtn" Grid.Column="2" Click="ConvertButton_Click" Content="Convert" Visibility="Hidden" />
             </Grid>
 
             <!-- File Selections -->
@@ -27,15 +27,25 @@
 
             <!-- File Examples -->
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="230" />
+                </Grid.RowDefinitions>
+
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock x:Name="SrtTxtBlock" Grid.Column="0" Text="Waiting on selection.." Margin="0 10" />
-                <TextBlock x:Name="SaveTxtBlock" Grid.Column="1" Text="Test Text 2" Margin="0 10" />
+                <TextBlock Grid.Column="0" Grid.Row="0" x:Name="SrtFileTitle" Text="Waiting for file selection"/>
+                <ScrollViewer Grid.Column="0" Grid.Row="1">
+                    <TextBlock x:Name="SrtTxtBlock" Height="Auto" Margin="0 10"> Waiting on selection..</TextBlock>
+                </ScrollViewer>
+                <TextBlock Grid.Column="1" Grid.Row="0" x:Name="ttmlFileTitle" Text="Waiting on conversion"/>
+                <ScrollViewer Grid.Column="1" Grid.Row="1">
+                    <TextBlock x:Name="SaveTxtBlock" Height="Auto" Margin="0 10"> Waiting on file conversion</TextBlock>
+                </ScrollViewer>
             </Grid>
-
         </StackPanel>
     </Border>
 

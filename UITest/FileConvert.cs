@@ -68,7 +68,7 @@ namespace UITest
         string setupHeader()
         {
             string header =
-                "﻿<?xml version='1.0' encoding='UTF - 8'?>\n" +
+                "﻿<?xml version='1.0' encoding='UTF-8'?>\n" +
                 "<tt xmlns='http://www.w3.org/2006/04/ttaf1' xmlns:tts='http://www.w3.org/2006/04/ttaf1#styling' xml:lang='en'> \n" +
                 "<head> \n" +
                 "<styling> \n" +

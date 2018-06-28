@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace UITest
 {
@@ -13,12 +14,14 @@ namespace UITest
         public MainWindow()
         {
             InitializeComponent();
+            ConvertBtn.Visibility = System.Windows.Visibility.Hidden;
         }
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
             string convertedFilePath = convert.ConvertFile();
             SaveTxtBlock.Text = convert.getConvertedFileText(convertedFilePath);
+            ttmlFileTitle.Text = convertedFilePath.ToString();
             MessageBox.Show("File " + convertedFilePath + " Created!");
         }
 
@@ -26,6 +29,11 @@ namespace UITest
         {
             fileName = convert.selectFile();
             SrtTxtBlock.Text = convert.getFileText();
+            if (SrtTxtBlock != null)
+            {
+                SrtFileTitle.Text = fileName;
+                ConvertBtn.Visibility = System.Windows.Visibility.Visible;
+            }
         }
     }
 }
