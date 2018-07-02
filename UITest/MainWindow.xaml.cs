@@ -19,7 +19,7 @@ namespace UITest
 
         private void ConvertButton_Click(object sender, RoutedEventArgs e)
         {
-            string convertedFilePath = convert.ConvertFile();
+            string convertedFilePath = convert.ConvertFile(LanguageTypeTxtBox.Text);
             SaveTxtBlock.Text = convert.getConvertedFileText(convertedFilePath);
             ttmlFileTitle.Text = convertedFilePath.ToString();
             MessageBox.Show("File " + convertedFilePath + " Created!");

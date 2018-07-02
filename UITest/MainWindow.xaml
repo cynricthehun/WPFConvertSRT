@@ -17,6 +17,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
+                <TextBox x:Name="LanguageTypeTxtBox" Grid.Column="0" Text="en"/>
                 <Button x:Name="ConvertBtn" Grid.Column="2" Click="ConvertButton_Click" Content="Convert" Visibility="Hidden" />
             </Grid>
 

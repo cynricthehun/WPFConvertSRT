@@ -65,7 +65,7 @@ namespace UITest
             return DirectoryString;
         }
 
-        string setupHeader()
+        string setupHeader(string Language)
         {
             string header =
                 "﻿<?xml version='1.0' encoding='UTF-8'?>\n" +
@@ -76,7 +76,7 @@ namespace UITest
                 "</styling> \n" +
                 "</head> \n" +
                 "<body style='defaultCaption' id='thebody'> \n" +
-                "<div xml:lang='eng'> \n";
+                "<div xml:lang='" + Language + "'> \n";
             return header;
         }
 
@@ -96,7 +96,7 @@ namespace UITest
             return number;
         }
 
-        public string ConvertFile()
+        public string ConvertFile(string language)
         {
             string[] lines = System.IO.File.ReadAllLines(newFile.FileName);
             string captionNumber = "";
@@ -104,7 +104,7 @@ namespace UITest
             string startTime = "00:00:00.0";
             string endTime = "00:00:00.0";
             string content = "";
-            string header1 = setupHeader();
+            string header1 = setupHeader(language);
             string footer1 = setupFooter();
 
             char oldChar = ',';
